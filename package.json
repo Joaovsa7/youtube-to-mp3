@@ -11,6 +11,7 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "@types/fluent-ffmpeg": "^2.1.17",
     "axios": "^0.21.1",
     "fluent-ffmpeg": "^2.1.2",
@@ -21,7 +22,7 @@
     "youtube-mp3-downloader": "^0.7.7",
     "youtube-sr": "^4.0.7",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.7.0",
+    "ytdl-core": "^4.8.0",
     "ytsr": "^3.5.0"
   },
   "devDependencies": {

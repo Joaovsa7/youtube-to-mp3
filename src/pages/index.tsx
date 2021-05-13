@@ -62,8 +62,9 @@ const Home = () => {
       responseType: 'blob'
     }).then(({ data }) => {
       const blob = new Blob([data], { type: 'audio/mp3' })
-      console.log({ blob })
       const url = window.URL.createObjectURL(blob)
+      const audio = new Audio()
+      audio.src = url
       setDownloadLink(url)
     })
   }
@@ -96,7 +97,7 @@ const Home = () => {
           <Preview {...videoData} />
         )}
       
-        <a href={downloadLink} download>
+        <a href={downloadLink} download target='_blank'>
           Download
         </a>
       </Flex>
