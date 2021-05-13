@@ -100,7 +100,7 @@ const Home = () => {
               href={downloadLink}
               target='_blank' 
               as='a'
-              download
+              download={videoData.title}
               isLoading={!downloadLink.length}
               loadingText="Carregando..."
             >
