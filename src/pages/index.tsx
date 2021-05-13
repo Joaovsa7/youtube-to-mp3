@@ -61,7 +61,7 @@ const Home = () => {
     }, {
       responseType: 'blob'
     }).then(({ data }) => {
-      const blob = new Blob([data], { type: 'audio/mp3' })
+      const blob = new Blob([data], { type: 'audio/mpeg' })
       const url = window.URL.createObjectURL(blob)
       const audio = new Audio()
       audio.src = url
@@ -94,12 +94,20 @@ const Home = () => {
           )}
         </Box>
         {hasVideoData && inputRef?.current?.value && (
-          <Preview {...videoData} />
+          <>
+            <Preview {...videoData} />
+            <Button
+              href={downloadLink}
+              target='_blank' 
+              as='a'
+              download
+              isLoading={!downloadLink.length}
+              loadingText="Carregando..."
+            >
+              Download
+            </Button>
+          </>
         )}
-      
-        <a href={downloadLink} download target='_blank'>
-          Download
-        </a>
       </Flex>
     </Container>
   )

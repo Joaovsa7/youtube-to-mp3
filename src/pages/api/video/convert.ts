@@ -8,7 +8,6 @@ ffmpeg.setFfmpegPath(ffmpegPath.path)
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { videoLink } = req.body
-    console.log({ videoLink, r: req.body })
     res.setHeader("Content-Type", "audio/mpeg");
 
     return Promise.resolve(ffmpeg()
