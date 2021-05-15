@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "yarn install && next build && next start"
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.1",
