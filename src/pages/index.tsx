@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react"
 
 import Preview from "../components/Preview"
-
 interface VideoData {
   title?: string
   thumbnail?: string
@@ -39,6 +38,7 @@ const Home = () => {
     }
 
     setLoading(true)
+
     api.get('/video/info', {
       params: {
         videoUrl
@@ -81,7 +81,7 @@ const Home = () => {
         <Box width='100%'>
           <form onSubmit={handleSubmit}>
             <Input type='text' placeholder='Digite aqui o link do youtube' marginBottom={5} ref={inputRef} />
-            <Button colorScheme='blue' type='submit' marginBottom={5} isLoading={loading} loadingText='Procurando o vídeo...'>
+            <Button colorScheme='blue' type='submit' marginBottom={5} isLoading={loading} loadingText='Carregando o vídeo...'>
               Pesquisar
             </Button>
           </form>
