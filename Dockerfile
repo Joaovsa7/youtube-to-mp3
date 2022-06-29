@@ -10,6 +10,8 @@ COPY yarn.lock /usr/src/app
 
 RUN yarn install --production
 
+ENV NODE_ENV=production
+
 COPY . /usr/src/app
 
 RUN yarn build
