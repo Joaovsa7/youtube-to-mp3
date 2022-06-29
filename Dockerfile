@@ -1,7 +1,7 @@
 FROM node:16-alpine
 
 RUN mkdir -p /usr/src/app
-ENV PORT 3000
+ENV PORT 80
 
 WORKDIR /usr/src/app
 
@@ -16,5 +16,5 @@ COPY . /usr/src/app
 
 RUN yarn build
 
-EXPOSE 3000
+EXPOSE 80
 CMD [ "yarn", "start" ]
