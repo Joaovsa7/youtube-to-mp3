@@ -1,7 +1,10 @@
 {
-  "name": "learn-starter",
+  "name": "youtube-to-mp3",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,20 +14,21 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@types/fluent-ffmpeg": "^2.1.17",
+    "@types/react": "^17.0.5",
     "axios": "^0.21.1",
+    "ffmpeg-static": "^5.1.0",
     "fluent-ffmpeg": "^2.1.2",
     "framer-motion": "^4",
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "typescript": "^4.2.4",
     "youtube-mp3-downloader": "^0.7.7",
-    "youtube-sr": "^4.0.7",
+    "youtube-sr": "^4.3.4",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.8.0",
-    "ytsr": "^3.5.0",
-    "@types/react": "^17.0.5",
-    "typescript": "^4.2.4"
+    "ytdl-core": "^4.11.4",
+    "ytsr": "^3.5.0"
   }
 }

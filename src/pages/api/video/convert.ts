@@ -1,9 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import ffmpeg from 'fluent-ffmpeg'
-import ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import ytdl from 'ytdl-core'
-
-ffmpeg.setFfmpegPath(ffmpegPath.path)
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
