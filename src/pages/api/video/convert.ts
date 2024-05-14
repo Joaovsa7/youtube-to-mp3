@@ -7,9 +7,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { videoLink } = req.body
     res.setHeader("Content-Type", "audio/mpeg");
 
-    return Promise.resolve(ffmpeg()
-    .input(ytdl(String(videoLink)))
-    .toFormat('mp3')
-    .pipe(res))
+    try {
+      return Promise.resolve(ffmpeg()
+      .input(ytdl(String(videoLink)))
+      .toFormat('mp3')
+      .pipe(res))
+    } catch (e) {
+      console.log(e)
+      res.status(500).send('Internal server error')
+    }
   }
 }

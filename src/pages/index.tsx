@@ -53,7 +53,7 @@ const Home = () => {
         duration: data.duration_formatted,
       })
       convertVideoToMp3()
-    })
+    }).catch(console.log)
   }
 
   const convertVideoToMp3 = () => {
@@ -67,7 +67,7 @@ const Home = () => {
       const audio = new Audio()
       audio.src = url
       setDownloadLink(url)
-    })
+    }).catch(console.log)
   }
 
   const hasError = !!error?.length
