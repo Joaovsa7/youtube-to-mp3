@@ -50,7 +50,8 @@ export default async (req, res) => {
             const uploadParams = {
                 Bucket: process.env.AWS_S3_BUCKET_NAME,
                 Key: key,
-                Body: passThrough
+                Body: passThrough,
+                ACL: 'public-read' 
             };
 
             try {
