@@ -22,6 +22,8 @@
     "ffmpeg-static": "^5.2.0",
     "framer-motion": "^4",
     "next": "^14.2.3",
+    "next-sitemap": "^4.2.3",
+    "node-getopt": "https://github.com/takamin/node-getopt.git",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^4.2.4",
@@ -29,8 +31,7 @@
     "youtube-sr": "^4.3.4",
     "ytdl": "^1.4.1",
     "ytdl-core": "^4.11.5",
-    "ytsr": "^3.5.0",
-    "node-getopt": "https://github.com/takamin/node-getopt.git"
+    "ytsr": "^3.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.2"

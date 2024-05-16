@@ -40,7 +40,8 @@ const Home = () => {
     }
 
     setLoading(true)
-
+    setVideoData({})
+    setDownloadLink('')
     api.get('/video/info', {
       params: {
         videoUrl
