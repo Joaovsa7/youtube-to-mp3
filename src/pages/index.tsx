@@ -11,7 +11,8 @@ import {
   AlertIcon,
   AlertTitle,
   CloseButton,
-  Container
+  Container,
+  Text,
 } from "@chakra-ui/react"
 
 import Preview from "../components/Preview"
@@ -58,15 +59,11 @@ const Home = () => {
 
   const convertVideoToMp3 = () => {
     api.post<Blob>('/video/convert', {
-      videoLink: inputRef.current.value
-    }, {
-      responseType: 'blob'
+      videoURL: inputRef.current.value
     }).then(({ data }) => {
-      const blob = new Blob([data], { type: 'audio/mpeg' })
-      const url = window.URL.createObjectURL(blob)
-      const audio = new Audio()
-      audio.src = url
-      setDownloadLink(url)
+      console.log({ data })
+      
+      setDownloadLink(data.url)
     }).catch(console.log)
   }
 
@@ -85,7 +82,7 @@ const Home = () => {
           <meta name="robots" content="index, follow" />
       </Head>
       <Container maxW="container.sm">
-        <Flex height='100vh' alignItems='center' justifyContent='center' flexDir='column'>
+        <Flex minHeight='40vh' alignItems='center' justifyContent='center' flexDir='column'>
           <Heading as='h1' marginBottom={10}>
             Convert youtube video to mp3
           </Heading>
@@ -120,15 +117,18 @@ const Home = () => {
             </>
           )}
         </Flex>
-        <p>
-        YouTubeToMP3.tube is the premier destination for converting YouTube videos to MP3 format effortlessly. With our intuitive interface and lightning-fast conversion process, you can seamlessly extract the audio from any YouTube video and enjoy it in high-quality MP3 format. Our website is designed to provide a smooth and efficient user experience, ensuring that you can convert your desired YouTube videos into audio files with utmost ease.
-
-At YouTubeToMP3.tube, we prioritize the latest SEO strategies and incorporate highly relevant keywords to enhance our ranking on search engines like Google. With our commitment to optimizing your search results, you can easily find us using keywords such as "YouTube to MP3 converter," "convert YouTube videos to MP3," and "fast audio conversion." As a result, our website maintains a prominent presence, allowing you to access our services conveniently.
-
-Our platform utilizes cutting-edge technology to ensure the highest audio quality for your converted MP3 files. Supporting a wide range of video formats, YouTubeToMP3.tube enables you to convert YouTube videos in various resolutions and bitrates. Whether you are a music lover, podcast enthusiast, or seeking inspirational content, our website empowers you to convert any YouTube video into an MP3 file effortlessly.
-
-Visit YouTubeToMP3.tube today and experience the unparalleled convenience, speed, and exceptional audio quality that distinguish us from other platforms. Say goodbye to limitations and unlock the world of audio content from your favorite YouTube videos with just a few clicks. Enjoy an ad-free environment and a secure conversion process as you explore the vast audio possibilities that await you.
-        </p>
+        <Heading as='h2' marginTop={10}>
+            How to convert YouTube to MP3
+          </Heading>
+          <Text marginTop={5}>
+          Are you looking for a seamless way to convert YouTube videos to MP3 files? Look no further than YouTube to MP3, the premier tool designed to make your life easier. With our user-friendly application, all you need to do is paste the YouTube video link into our platform, wait a brief moment as our app swiftly locates your video, and then click 'Download' to instantly save the MP3 to your device. Whether you're looking to enjoy your favorite songs offline, compile playlists, or just save those inspiring talks without the need for internet access, YouTube to MP3 makes it all possible with just a few clicks. Our service ensures high-quality audio files, making it the perfect choice for music lovers and content creators alike.
+          </Text>
+          <Heading as='h2' marginTop={10}>
+            Why choose YouTube to MP3?
+          </Heading>
+          <Text marginTop={5}>
+          Transform your multimedia experience with YouTube to MP3, a powerful tool designed to convert YouTube videos into high-quality MP3 files effortlessly. This application is tailored for simplicity and efficiency, enabling users to easily input a YouTube link, wait as the app processes the video, and download their audio file in just moments. Ideal for anyone looking to access their favorite YouTube content offline or integrate audio into personal projects, YouTube to MP3 ensures you get the best in audio quality and conversion speed. Take advantage of this reliable and user-friendly app to enrich your audio collection and keep your favorite tunes with you at all times, no matter where you go.
+          </Text>
       </Container>
     </>
   )
