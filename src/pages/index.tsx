@@ -55,7 +55,10 @@ const Home = () => {
         duration: data.duration_formatted,
       })
       convertVideoToMp3()
-    }).catch(console.log)
+    }).catch(e => {
+      setLoading(false)
+      setError('Erro ao buscar informações do vídeo')
+    })
   }
 
   const convertVideoToMp3 = () => {
