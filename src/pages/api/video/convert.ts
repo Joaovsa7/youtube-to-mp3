@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, ObjectCannedACL } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
 import ytdl from 'ytdl-core';
 import { spawn } from 'child_process';
@@ -57,7 +57,12 @@ export default async (req, res) => {
             try {
                 const upload = new Upload({
                     client: s3Client,
-                    params: uploadParams
+                    params: {
+                        Bucket: uploadParams.Bucket,
+                        Key: uploadParams.Key,
+                        Body: uploadParams.Body,
+                        ACL: ObjectCannedACL.public_read
+                    }
                 });
 
                 await upload.done();
