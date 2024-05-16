@@ -61,9 +61,11 @@ const Home = () => {
     api.post<Blob>('/video/convert', {
       videoURL: inputRef.current.value
     }).then(({ data }) => {
-      console.log({ data })
-      
-      setDownloadLink(data.url)
+      const videoData = data as unknown as {
+        url: string
+      }
+  
+      setDownloadLink(videoData.url)
     }).catch(console.log)
   }
 
