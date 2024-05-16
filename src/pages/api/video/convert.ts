@@ -32,12 +32,12 @@ export default async (req, res) => {
 
             const ffmpegProcess = spawn(ffmpeg, [
                 '-loglevel', 'error', '-hide_banner',
-                '-i', 'pipe:0',  // Input from stdin
+                '-i', 'pipe:0',
                 '-acodec', 'libmp3lame',
                 '-b:a', '192k',
                 '-af', 'dynaudnorm=f=200',
                 '-f', 'mp3',
-                'pipe:1',  // Output to stdout
+                'pipe:1',
             ], {
                 windowsHide: true,
                 stdio: ['pipe', 'pipe', 'inherit', 'pipe'],
