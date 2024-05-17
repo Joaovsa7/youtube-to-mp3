@@ -3,6 +3,7 @@ import { Upload } from '@aws-sdk/lib-storage';
 import ytdl from 'ytdl-core';
 import { spawn } from 'child_process';
 import ffmpeg from 'ffmpeg-static';
+import slugify from 'slugify';
 import { PassThrough } from 'stream';
 
 // Initialize the S3 client
@@ -22,7 +23,10 @@ export default async (req, res) => {
                 return res.status(400).json({ error: 'Invalid or missing URL' });
             }
 
-            const videoTitle = encodeURIComponent((await ytdl.getInfo(videoURL)).videoDetails.title);
+            const videoTitle = slugify((await ytdl.getInfo(videoURL)).videoDetails.title, {
+                lower: true,
+                strict: true,
+            })
 
             const stream = ytdl(videoURL, {
                 quality: 'highestaudio',
