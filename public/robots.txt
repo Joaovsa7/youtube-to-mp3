@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.youtubetomp3.tube
+
+# Sitemaps
+Sitemap: https://www.youtubetomp3.tube/sitemap.xml

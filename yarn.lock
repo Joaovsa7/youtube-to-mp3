@@ -2762,7 +2762,7 @@ next@*, next@^14.2.3, "next@^8.1.1-canary.54 || >=9.0.0":
     "@next/swc-win32-ia32-msvc" "14.2.3"
     "@next/swc-win32-x64-msvc" "14.2.3"
 
-"node-getopt@github:takamin/node-getopt", "node-getopt@https://github.com/takamin/node-getopt.git":
+"node-getopt@github:takamin/node-getopt":
   version "0.3.3-forked-by-takamin"
   resolved "git+ssh://git@github.com/takamin/node-getopt.git#a94ecd2791f28b89108a001d5e5f51d632dbe671"
 
