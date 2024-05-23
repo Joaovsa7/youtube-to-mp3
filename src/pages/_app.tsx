@@ -1,11 +1,11 @@
 import * as React from "react"
-import { ChakraProvider } from "@chakra-ui/react"
+import './globals.css'
 
 function App({ Component }) {
   return (
-    <ChakraProvider>
+    <main className="container mx-auto max-w-lg	">
       <Component />
-    </ChakraProvider>
+    </main>
   )
 }
 
