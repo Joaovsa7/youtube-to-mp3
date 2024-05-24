@@ -14,7 +14,7 @@ ENV NODE_ENV=production
 
 COPY . /usr/src/app
 
-RUN yarn build
+RUN npm run build
 
 EXPOSE 3000
-CMD [ "yarn", "start" ]
+CMD [ "npm", "run","start" ]

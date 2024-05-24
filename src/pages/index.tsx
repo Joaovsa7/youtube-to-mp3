@@ -3,17 +3,6 @@ import Head from "next/head"
 
 import api from "../../config/axios"
 
-import { Button } from "@chakra-ui/button"
-import { Input } from "@chakra-ui/input"
-import { Box, Flex, Heading } from "@chakra-ui/layout"
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  CloseButton,
-  Container,
-  Text,
-} from "@chakra-ui/react"
 import Accordion from '../components/Accordion'
 
 import Preview from "../components/Preview"
